@@ -1,11 +1,11 @@
 if (!require("ClimClass")) library(ClimClass)
 
 
-prec <- read.csv("tabs/prec_monthly.csv") # cantitati medii multianuale 
-tmed <- read.csv("tabs/tmed_monthly.csv") # temperatura medie multianuala
-tmax <- read.csv("tabs/tmax_monthly.csv") # mediile temperaturilor maxime
-tmin <- read.csv("tabs/tmin_monthly.csv") #  mediile temperaturilor minime
-tmin.abs <- read.csv("tabs/tmin.abs_monthly.csv") # minimele absolute
+prec <- read.csv("input/prec_monthly.csv") # cantitati medii multianuale 
+tmed <- read.csv("input/tmed_monthly.csv") # temperatura medie multianuala
+tmax <- read.csv("input/tmax_monthly.csv") # mediile temperaturilor maxime
+tmin <- read.csv("input/tmin_monthly.csv") #  mediile temperaturilor minime
+tmin.abs <- read.csv("input/tmin.abs_monthly.csv") # minimele absolute
 
 # incepe iteratia pentru fiecare statie
 tabf <- NULL
@@ -21,4 +21,4 @@ for (i in 1:nrow(prec)) {
   tabf <- rbind(tabf,cbind(nume = prec$NUME[i], tabi))
 }
 
-write.csv(tabf, "tabs/statii_3_koeppen_1961_2015.csv")
+write.csv(tabf, "output/statii_3_koeppen_1961_2015.csv")

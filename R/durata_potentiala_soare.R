@@ -10,7 +10,7 @@ if (!require("climatetools")) remotes::install_github("alexdum/climatetools")
 days <- seq(as.POSIXct("2021-01-01 00:00:00"), as.POSIXct("2021-12-31 23:00:00"), "days")
 
 # selecteaza statii
-ws.sel <- ws %>% filter(NUME %in% c("Constanta", "Vf. Omu", "Iasi", "Ocna Sugatag")) %>% select(CODGE, NUME, Lon, Lat) %>% 
+ws.sel <- ws %>% filter(NUME %in% c("Constanta", "Vf. Omu", "Iasi", "Ocna Sugatag")) %>% dplyr::select(CODGE, NUME, Lon, Lat) %>% 
   slice(rep(1:n(), each = length(days)))
 
 # fisier final
@@ -23,4 +23,4 @@ down <- sunriset(Hels, durata$time, direction="sunset", POSIXct.out=TRUE)
 durata$day_length <- as.numeric(down$time - up$time)
 
 # scrie datele
-write.csv(durata, "tabs/durata_potentiala.csv", row.names = F)
+write.csv(durata, "output/durata_potentiala.csv", row.names = F)
