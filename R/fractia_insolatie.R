@@ -12,3 +12,4 @@ fractia <- stralucire %>% left_join(durata, by = c("cod" = "CODGE", "date" = "da
 
 # scrie datele
 write.csv(fractia, "tabs/fractia_insolatie.csv", row.names = F)
+
