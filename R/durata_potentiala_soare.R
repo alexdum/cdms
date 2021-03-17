@@ -1,3 +1,4 @@
+setwd("~/D/Alex/Clima/2021/cdms")
 # instalalere biblioteci R daca nu sunt
 
 if (!require("maptools")) install.packages("maptools")

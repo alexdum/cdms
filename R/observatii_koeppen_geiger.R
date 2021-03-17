@@ -1,3 +1,4 @@
+setwd("~/D/Alex/Clima/2021/cdms")
 if (!require("ClimClass")) library(ClimClass)
 
 
