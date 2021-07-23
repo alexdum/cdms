@@ -1,13 +1,10 @@
 library(maptools)
 library(rgdal)
 library(RODBC)
-library(gstat)
 library(raster)
-library(dplyr)
 library(climatetools)
 
 
-statii <- read.csv("tabele/statii.csv")
 #incarca predictori
 dem <- raster("input/grids/dem_focal.tif")
 names(dem) <- "alt"
@@ -21,7 +18,7 @@ data2 <- as.Date(paste0(format(data,"%Y-%m"),"-01")) - 1
 data1 <- as.Date(paste0(format(data2,"%Y-%m"),"-01"))
 
 # # conectare BD not RUN
-#  am descarcat dupa ce am extras ca sa poata fi rulat si fara accesa la BD
+#  am salvat local dupa ce am extras ca sa poata fi rulat si fara accesa la BD
 # channel <- odbcConnect(dsn = "ORACLE2")
 # tt <- paste("SELECT CLIMALU.COD,CLIMALU.DAT,  CLIMALU.TEMP_MEDL FROM CLIMA.CLIMALU CLIMALU WHERE  
 #             (CLIMALU.DAT>={ts '", data1," 00:00:00'} and CLIMALU.DAT<={ts '", data2," 00:00:00'})
@@ -31,7 +28,7 @@ data1 <- as.Date(paste0(format(data2,"%Y-%m"),"-01"))
 # tt <- na.omit(tt)
 # write.csv(tt, "input/tabs/temp.data.csv", row.names = F)
 
-# citire date descarcate din BD, am descarcat dupa ce am extras ca sa poata fi rulat si fara accesa la BD
+# citire date descarcate din BD
 tt <- read.csv("input/tabs/temp.data.csv")
 
 
