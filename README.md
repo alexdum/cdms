@@ -18,5 +18,5 @@ scriptul R/harta_temperatura.R care realizează următoarele operații:
 
 - extrage datele lunare de temperatura aerului din BD;
 - salvează datele extrase în format csv;
-- utilizează datele pentru realizarea hărții cu distribția spațială a temperaturii medii lunare a aerului;
+- utilizează datele pentru realizarea hărții cu distribuția spațială a temperaturii medii lunare a aerului;
 - salvează datele interpolate în format GeoTIFF, proiecție Stereo 70.
