@@ -12,3 +12,11 @@ scriptul R/durata_potentiala_soare.R
 
 scriptul R/observatii_koeppen_geiger.R
 
+## Cerința 3.2.5.2.1
+
+scriptul R/harta_temperatura.R care realizează următoarele operații:
+
+- extrage datele lunare de temperatura aerului din BD;
+- salvează datele extrase în format csv;
+- utilizează datele pentru realizarea hărții cu distribția spațială a temperaturii medii lunare a aerului;
+- salvează datele interpolate în format GeoTIFF, proiecție Stereo 70.
