@@ -13,7 +13,7 @@ args <- commandArgs(TRUE)
 dat1 <- as.character(args[1])
 dat2 <- as.character(args[2])
 
-channel <- odbcConnect("ORACLE2", uid = "dezvoltare", pwd = "zed#$345")
+channel <- odbcConnect("ORACLE2")
 
 t1 <- paste("SELECT CLIMAZIS.COD, CLIMAZIS.DAT, CLIMAZIS.tmed FROM CLIMA.CLIMAZIS CLIMAZIS WHERE CLIMAZIS.COD in(",toString(ws$CODGE),") and (CLIMAZIS.DAT>={ts '",dat1," 00:00:00'} And CLIMAZIS.DAT<={ts '",dat2,"23:00:00'})ORDER BY CLIMAZIS.DAT")
 t1 <- sqlQuery(channel,t1,as.is = T)
