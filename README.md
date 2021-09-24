@@ -21,7 +21,7 @@ scriptul R/harta_temperatura.R care realizează următoarele operații:
 - utilizează datele pentru realizarea hărții cu distribuția spațială a temperaturii medii lunare a aerului;
 - salvează datele interpolate în format GeoTIFF, proiecție Stereo 70.
 
-## Cerința 
+## Cerința 3.2.4.3
 
 scriptul R/extragere_tmed.R care realizează următoarele operații:
 
