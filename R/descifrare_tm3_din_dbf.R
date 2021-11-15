@@ -4,7 +4,7 @@ library(tidyr)
 library(foreign)
 options(warn = 2)
 
-tab <- read.dbf("input/tabs/tm3/BRASOV.DBF")
+tab <- read.dbf("input/tabs/tm3/OCNASUG.DBF")
 # write.csv(tab, "tabs/dbfs/zalau_1983_1990.csv", row.names = F)
 
 # tab <- read.csv("tabs/dbfs/pitesti_1949_1990.csv")
@@ -85,7 +85,7 @@ time.dupl <- df.f$time[duplicated(df.f$time)]
 # selectare secvente suprapuse
 df.s <- df.f[df.f$time %in% time.dupl,]
 
-write.csv(df.s, "output/tabs/tm3/dbf_probleme/brasov_1957_1990_suprapuneri.csv", row.names = F)
+write.csv(df.s, "output/tabs/tm3/dbf_probleme/ocsug_1968_1990._suprapuneri.csv", row.names = F)
 
 # eliminare secvente care se suprapun
 df.f <- df.f[!df.f$time %in% time.dupl,]
@@ -93,7 +93,7 @@ df.f <- df.f[!df.f$time %in% time.dupl,]
 
 df.f$cant <- df.f$cant * 0.1
 
-saveRDS(df.f, "output/tabs/tm3/brasov_1957_1990.rds")
+saveRDS(df.f, "output/tabs/tm3/ocsug_1968_1990.rds")
 
 
 
