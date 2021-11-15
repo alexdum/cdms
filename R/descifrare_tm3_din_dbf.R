@@ -80,6 +80,17 @@ for (i in 1:length(nrp)) {
   
 }
 
+# identificare suprapunere ploi
+time.dupl <- df.f$time[duplicated(df.f$time)]
+# selectare secvente suprapuse
+df.s <- df.f[df.f$time %in% time.dupl,]
+
+write.csv(df.s, "output/tabs/tm3/dbf_probleme/brasov_1957_1990_suprapuneri.csv", row.names = F)
+
+# eliminare secvente care se suprapun
+df.f <- df.f[!df.f$time %in% time.dupl,]
+
+
 df.f$cant <- df.f$cant * 0.1
 
 saveRDS(df.f, "output/tabs/tm3/brasov_1957_1990.rds")
